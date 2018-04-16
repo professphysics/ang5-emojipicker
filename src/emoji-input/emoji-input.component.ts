@@ -37,6 +37,8 @@ import { EmojiService } from '../emoji.service';
         (ngModelChange)="onChange($event)"
         [(ngModel)]="input"/>
     </ng-template>
+<button>
+
     <div class="emoji-search"
       [ngClass]="[popupAnchor, searchClass]"
       [hidden]="!popupOpen"
@@ -54,66 +56,85 @@ import { EmojiService } from '../emoji.service';
         </span>
       </div>
     </div>
+</button>
   `,
   styles: [`
-      :host {
-        display: block;
-        position: relative;
-      }
-      :host .emoji-search {
-        background-color: #fff;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-        height: auto;
-        line-height: 1.5;
-        position: absolute;
-        right: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        z-index: 100;
-      }
-      :host .emoji-search[hidden] {
-        display: none;
-      }
-      :host .emoji-search.bottom {
-        top: -202px;
-      }
-      :host .emoji-search input {
-        border-radius: 4px;
-        font-size: 10px;
-        padding: 4px 8px;
-        margin: 0;
-        height: 30px;
-      }
-      :host .emoji-search .search-header {
-        background-color: #eee;
-        border-bottom: 1px solid #ccc;
-        border-radius: 4px 4px 0 0;
-        padding: 4px 8px;
-        width: 100%;
-      }
-      :host .emoji-search .emojis-container {
-        border-radius: 0 0 4px 4px;
-        max-height: 160px;
-        padding: 5px 12px;
-        overflow: auto;
-        overflow-x: hidden;
-        flex: 1;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      :host .emoji-search span {
-        cursor: pointer;
-        padding: 4px 3px 2px 4px;
-        font-size: 24px;
-      }
-      :host .emoji-search span:hover {
-        background-color: #ccc;
-      }
+     button {
+     background: none;
+     border: none;
+     padding: 0;
+     outline: none;
+     cursor: default;
+     height: 0;
+   }
 
+   :host {
+     display: block;
+     position: relative;
+   }
+
+   :host .emoji-search {
+     background-color: #fff;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+     height: auto;
+     line-height: 1.5;
+     position: absolute;
+     right: 0;
+     width: 100%;
+     display: flex;
+     flex-direction: column;
+     z-index: 100;
+   }
+
+   :host .emoji-search[hidden] {
+     display: none;
+   }
+
+   :host .emoji-search.bottom {
+     top: -202px;
+   }
+
+   :host .emoji-search input {
+     border-radius: 4px;
+     font-size: 10px;
+     padding: 4px 8px;
+     margin: 0;
+     height: 30px;
+   }
+
+   :host .emoji-search .search-header {
+     background-color: #eee;
+     border-bottom: 1px solid #ccc;
+     border-radius: 4px 4px 0 0;
+     padding: 4px 8px;
+     width: 100%;
+   }
+
+   :host .emoji-search .emojis-container {
+     border-radius: 0 0 4px 4px;
+     max-height: 100%;
+     overflow: auto;
+     overflow-x: hidden;
+     flex: 1;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+   }
+
+   :host .emoji-search span {
+     cursor: pointer;
+     padding: 4px 3px 2px 4px;
+     font-size: 24px;
+     width: 39.95px;
+     height: 39.95px;
+     text-align: center;
+   }
+
+   :host .emoji-search span:hover {
+     background-color: #ccc;
+   }
   `]
 })
 export class EmojiInputComponent implements OnInit, AfterViewInit, OnChanges {
@@ -141,7 +162,7 @@ export class EmojiInputComponent implements OnInit, AfterViewInit, OnChanges {
   public filterEmojis: string = '';
   public filteredEmojis: any[];
   public allEmojis: Array<any>;
-  public popupOpen: boolean = false;
+  public popupOpen: boolean = true;
   public lastCursorPosition: number = 0;
 
   constructor(public emojiService: EmojiService) {
