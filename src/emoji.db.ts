@@ -743,16 +743,18 @@ export const EMOJI_DB: any = [{
   "tags": [
     "ufo"
   ]
-}, {
-  "emoji": "💩",
-  "description": "pile of poo",
-  "aliases": [
-    "hankey", "poop", "shit"
-  ],
-  "tags": [
-    "crap"
-  ]
-}, {
+}, 
+// {
+//   "emoji": "💩",
+//   "description": "pile of poo",
+//   "aliases": [
+//     "hankey", "poop", "shit"
+//   ],
+//   "tags": [
+//     "crap"
+//   ]
+// }, 
+{
   "emoji": "🔥",
   "description": "fire",
   "aliases": [
