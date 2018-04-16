@@ -43,11 +43,11 @@ import { EmojiService } from '../emoji.service';
       [ngClass]="[popupAnchor, searchClass]"
       [hidden]="!popupOpen"
       (click)="$event.stopPropagation()">
-      <div class="search-header">
-        <input type="search" placeholder="Search..."
-          [(ngModel)]="filterEmojis"
-          (ngModelChange)="updateFilteredEmojis()"/>
-      </div>
+//       <div class="search-header">
+//         <input type="search" placeholder="Search..."
+//           [(ngModel)]="filterEmojis"
+//           (ngModelChange)="updateFilteredEmojis()"/>
+//       </div>
       <div class="emojis-container">
         <span *ngFor="let emoji of filteredEmojis"
               (click)="onEmojiClick(emoji.emoji)"
@@ -244,9 +244,9 @@ export class EmojiInputComponent implements OnInit, AfterViewInit, OnChanges {
   }
 
   onEmojiClick(e) {
-    this.input = this.input.substr(0, this.lastCursorPosition) + e + this.input.substr(this.lastCursorPosition);
-    this.modelChange.emit(this.input);
-    this.emojiClick.emit(e);
+//     this.input = this.input.substr(0, this.lastCursorPosition) + e + this.input.substr(this.lastCursorPosition);
+//     this.modelChange.emit(this.input);
+//     this.emojiClick.emit(e);
     if (this.closeAfterSelection) {
       this.popupOpen = false;
       this.clean();
