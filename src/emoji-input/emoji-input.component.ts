@@ -37,8 +37,7 @@ import { EmojiService } from '../emoji.service';
         (ngModelChange)="onChange($event)"
         [(ngModel)]="input"/>
     </ng-template>
-<button>
-
+<a>
     <div class="emoji-search"
       [ngClass]="[popupAnchor, searchClass]"
       [hidden]="!popupOpen"
@@ -51,18 +50,9 @@ import { EmojiService } from '../emoji.service';
         </span>
       </div>
     </div>
-</button>
+</a>
   `,
   styles: [`
-     button {
-     background: none;
-     border: none;
-     padding: 0;
-     outline: none;
-     cursor: default;
-     height: 0;
-   }
-
    :host {
      display: block;
      position: relative;
